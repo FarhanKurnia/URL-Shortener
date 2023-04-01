@@ -21,8 +21,8 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-lg-6 mx-auto">
-          <h3 class="text-center mb-4">Short your link</h3>
-          <p>This site </p>
+          <h2 class="text-center font-weight-bold-center mb-4">Short your link</h3>
+          <p class="text-center">The easiest and simplest way to shorten your urls and make them more accessible</p>
           <div class="card shadow mb-5">
             <div class="card-body">
                 @if ($errors->any())
