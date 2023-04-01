@@ -52,7 +52,7 @@ class LinkController extends Controller
     {
         $link = Link::where('alias', $alias)->first();
         if(!$link) abort(404);
-        return Redirect::away($link->destination);
+        return Redirect::away($link->source);
         // return redirect()->away($link->destination);
     }
 
