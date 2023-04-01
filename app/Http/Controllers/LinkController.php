@@ -45,7 +45,7 @@ class LinkController extends Controller
                 'destination' => $destination,
                 'alias' => $alias,
             ]);
-        return to_route('index')->with('result' , $destination);
+        return to_route('index')->with('result' , $destination)->with('request',$source);
     }
 
     public function redirect(string $alias)
