@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LinkController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', [LinkController::class, 'index'])->name('index');
+Route::post('/', [LinkController::class, 'store'])->name('store');
+Route::get('/{alias}', [LinkController::class, 'redirect'])->name('redirect');
