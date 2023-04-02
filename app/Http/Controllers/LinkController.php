@@ -34,7 +34,7 @@ class LinkController extends Controller
     public function store(Request $request)
     {
         $messages = [
-            'required' => 'Link harus diisi!',
+            'required' => 'URL cannot be empty',
             ];
         $this->validate($request, [
             'source' => ['required', 'active_url'],
@@ -48,7 +48,7 @@ class LinkController extends Controller
                 'destination' => $destination,
                 'alias' => $alias,
             ]);
-        return to_route('index')->with('result' , $destination)->with('request',$source);
+        return to_route('index')->with('result' , $destination)->with('request',$source)->with(['success' => 'Shortlink created successfully']);
     }
 
     public function redirect(string $alias)
