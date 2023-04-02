@@ -33,9 +33,12 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'required' => 'Link harus diisi!',
+            ];
         $this->validate($request, [
             'source' => ['required', 'active_url'],
-        ]);
+        ],$messages);
 
         $alias = Str::random(6);
         $source = $request->input('source');
