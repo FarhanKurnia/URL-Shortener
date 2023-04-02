@@ -10,6 +10,6 @@ class link extends Model
     use HasFactory;
 
     protected $fillable = [
-        'source','destination', 'alias'
+        'source','destination', 'alias','ip',
     ];
 }

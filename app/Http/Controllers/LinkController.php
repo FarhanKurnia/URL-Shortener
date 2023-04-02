@@ -43,10 +43,12 @@ class LinkController extends Controller
         $alias = Str::random(6);
         $source = $request->input('source');
         $destination = url($alias);
+        $clientIP = $request->ip();
         $link = Link::create([
                 'source' => $source,
                 'destination' => $destination,
                 'alias' => $alias,
+                'ip' => $clientIP
             ]);
         return to_route('index')->with('result' , $destination)->with('request',$source)->with(['success' => 'Shortlink created successfully']);
     }
@@ -56,7 +58,6 @@ class LinkController extends Controller
         $link = Link::where('alias', $alias)->first();
         if(!$link) abort(404);
         return Redirect::away($link->source);
-        // return redirect()->away($link->destination);
     }
 
     /**

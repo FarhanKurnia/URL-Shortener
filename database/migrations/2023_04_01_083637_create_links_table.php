@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('alias')->unique();
             $table->text('source');
             $table->text('destination');
+            $table->string('ip');
             $table->timestamps();
         });
     }
