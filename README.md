@@ -1,6 +1,6 @@
 # URL Shortener
 ## About
-![Example](image/image.png "Shortlink")
+![Example](image/image.jpg "Shortlink")
 This apps build with laravel v.10 to shorten your urls and make them more accessible.
 
 ------------------------------------------------------------------------
